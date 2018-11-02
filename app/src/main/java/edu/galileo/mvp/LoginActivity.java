@@ -3,6 +3,7 @@ package edu.galileo.mvp;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
@@ -96,6 +97,17 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     @Override
     public void successAction() {
         Toast.makeText(LoginActivity.this, "Success", Toast.LENGTH_SHORT).show();
+    }
+
+    @OnClick(R.id.show_snackbar)
+    public void showSnackBar() {
+        Snackbar.make(mLoginFormView, "THIS IS SIMPLE SNACKBAR", Snackbar.LENGTH_LONG)
+                .setAction("CLOSE", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view){
+                        // ...
+                    }
+                }).show();
     }
 }
 
